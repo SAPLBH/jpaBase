@@ -6,13 +6,13 @@ import javax.persistence.Id;
 @Entity
 public class Succ {
 	@Id
-	private String key;
+	private String id;
 	private String succId;
-	public String getKey() {
-		return key;
+	public String getId() {
+		return id;
 	}
-	public void setKey(String key) {
-		this.key = key;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getSuccId() {
 		return succId;
