@@ -2,16 +2,26 @@ package com.sap.lbh.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Column;
 
 @Entity
 public class FreightOrderRoot {
 
 	@Id
+	@Column(name="rootID")
 	private String rootID;
+	@Column(name="carrierID")
 	private String carrierID;
+	@Column(name="purchOrg")
 	private String purchOrg;
+	@Column(name="srcLoc")
 	private String srcLoc;
+	@Column(name="destLoc")
 	private String destLoc;
+	
+	@OneToMany(mappedBy="freightOrderRoot")
+	private Items itemList;
 	
 public String getRootID() {
 		return rootID;
