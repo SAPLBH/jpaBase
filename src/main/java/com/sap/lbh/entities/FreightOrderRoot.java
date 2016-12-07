@@ -3,6 +3,9 @@ package com.sap.lbh.entities;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import java.util.Collection;
+
 import javax.persistence.Column;
 
 @Entity
@@ -19,11 +22,11 @@ public class FreightOrderRoot {
 	private String srcLoc;
 	@Column(name="destLoc")
 	private String destLoc;
-	@OneToMany(mappedBy="root")
-	private Stop stop;
+	@OneToMany(mappedBy="root", targetEntity=Stop.class)
+	private Collection stop;
 	
-	@OneToMany(mappedBy="freightOrderRoot")
-	private Items itemList;
+	@OneToMany(mappedBy="freightOrderRoot", targetEntity=Items.class)
+	private Collection itemList;
 	
 public String getRootID() {
 		return rootID;
