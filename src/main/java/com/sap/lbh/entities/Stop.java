@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -19,6 +20,10 @@ public class Stop {
 	@OneToOne
 	@JoinColumn(name="succId")
 	private Succ successor;
+	
+	@ManyToOne(optional=false)
+    @JoinColumn(name="rootKey")
+	private FreightOrderRoot root;
 	
 	public String getStopId() {
 		return stopId;
@@ -43,6 +48,12 @@ public class Stop {
 	}
 	public void setSuccessor(Succ successor) {
 		this.successor = successor;
+	}
+	public FreightOrderRoot getRoot() {
+		return root;
+	}
+	public void setRoot(FreightOrderRoot root) {
+		this.root = root;
 	}
 	public Stop() {
 		super();

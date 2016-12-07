@@ -2,6 +2,7 @@ package com.sap.lbh.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class FreightOrderRoot {
@@ -12,6 +13,8 @@ public class FreightOrderRoot {
 	private String purchOrg;
 	private String srcLoc;
 	private String destLoc;
+	@OneToMany(mappedBy="root")
+	private Stop stop;
 	
 public String getRootID() {
 		return rootID;
