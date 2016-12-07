@@ -19,6 +19,8 @@ public class FreightOrderRoot {
 	private String srcLoc;
 	@Column(name="destLoc")
 	private String destLoc;
+	@OneToMany(mappedBy="root")
+	private Stop stop;
 	
 	@OneToMany(mappedBy="freightOrderRoot")
 	private Items itemList;
