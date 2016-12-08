@@ -14,6 +14,8 @@ public class FreightOrderRoot {
 	@Id
 	@Column(name="rootID")
 	private String rootID;
+	@Column(name="freightOrderType")
+	private String freightOrderType;
 	@Column(name="carrierID")
 	private String carrierID;
 	@Column(name="purchOrg")
@@ -27,6 +29,9 @@ public class FreightOrderRoot {
 	
 	@OneToMany(mappedBy="freightOrderRoot", targetEntity=Items.class)
 	private Collection itemList;
+	
+	@OneToMany(mappedBy="execOrder", targetEntity=Party.class)
+	private Collection carrier;
 	
 public String getRootID() {
 		return rootID;
