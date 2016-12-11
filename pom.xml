@@ -12,10 +12,10 @@
 	<description>Base JPA for LBH</description>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.2.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+	  <groupId>com.sap.lbh</groupId>
+	  <artifactId>FreightOrderConfirmationParent</artifactId>
+	  <version>0.0.1-SNAPSHOT</version>
+	  <relativePath>../FreightOrderConfirmationParent/pom.xml</relativePath>
 	</parent>
 
 	<properties>
@@ -52,15 +52,35 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+				    <execution>
+				      <goals>
+				        <goal>repackage</goal>
+				      </goals>
+				      <configuration>
+				        <classifier>exec</classifier>
+				      </configuration>
+				    </execution>
+				  </executions>
 			</plugin>
+			<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.1</version>
+    <configuration>
+        <source>1.8</source>
+        <target>1.8</target>
+    </configuration>
+</plugin>
 		</plugins>
-	</build>
+		
+	</build>	
+
 
 
 </project>
