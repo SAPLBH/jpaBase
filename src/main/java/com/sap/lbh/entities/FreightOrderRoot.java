@@ -64,6 +64,30 @@ public String getRootID() {
 		this.destLoc = destLoc;
 	}
 	
+	public String getFreightOrderType() {
+		return freightOrderType;
+	}
+	public void setFreightOrderType(String freightOrderType) {
+		this.freightOrderType = freightOrderType;
+	}
+	public Collection getStop() {
+		return stop;
+	}
+	public void setStop(Collection stop) {
+		this.stop = stop;
+	}
+	public Collection getItemList() {
+		return itemList;
+	}
+	public void setItemList(Collection itemList) {
+		this.itemList = itemList;
+	}
+	public Collection getCarrier() {
+		return carrier;
+	}
+	public void setCarrier(Collection carrier) {
+		this.carrier = carrier;
+	}
 	public FreightOrderRoot (){
 		super();
 	}
